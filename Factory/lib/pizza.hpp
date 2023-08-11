@@ -17,7 +17,7 @@ public:
     };
 
     const std::string& name() const;
-    const double& cost() const;
+    double cost() const;
     const Size& size() const;
     void set_size(const Size& new_size);
     virtual ~Pizza() = default;

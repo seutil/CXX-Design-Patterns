@@ -24,7 +24,7 @@ Pizza::name() const
     return m_name;
 }
 
-const double&
+double
 Pizza::cost() const
 {
     return m_cost * PIZZA_SIZE_MULTIPLIER.at(m_size);
