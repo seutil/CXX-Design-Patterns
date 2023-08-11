@@ -3,6 +3,7 @@ project(PizzeriaLib VERSION 1.0.0)
 
 set(SOURCES
     pizza.cpp
+    pizza-store.cpp
 )
 
 add_library(pizzeriaLib STATIC ${SOURCES})
