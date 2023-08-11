@@ -57,3 +57,21 @@ ClamPizza::ClamPizza(const Size& size)
 VeggiePizza::VeggiePizza(const Size& size)
     : Pizza("Veggie Pizza", 15, size)
 {}
+
+PizzaStyle::PizzaStyle(std::shared_ptr<Pizza> pizza,
+                       const std::string& name)
+    : Pizza(pizza->m_name + ", " + name, pizza->m_cost, pizza->m_size),
+      m_pizza{pizza}
+{}
+
+NewYorkPizzaStyle::NewYorkPizzaStyle(std::shared_ptr<Pizza> pizza)
+    : PizzaStyle(pizza, "New York Style")
+{}
+
+ChicagoPizzaStyle::ChicagoPizzaStyle(std::shared_ptr<Pizza> pizza)
+    : PizzaStyle(pizza, "Chicago Style")
+{}
+
+CaliforniaPizzaStyle::CaliforniaPizzaStyle(std::shared_ptr<Pizza> pizza)
+    : PizzaStyle(pizza, "California Style")
+{}

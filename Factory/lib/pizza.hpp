@@ -1,4 +1,5 @@
 #pragma once
+#include <memory>
 #include <string>
 
 namespace Pizzeria
@@ -6,6 +7,7 @@ namespace Pizzeria
 
 class Pizza
 {
+friend class PizzaStyle;
 public:
     enum class Size
     {
@@ -51,6 +53,33 @@ class VeggiePizza : public Pizza
 {
 public:
     VeggiePizza(const Size& size = Size::MEDIUM);
+};
+
+class PizzaStyle : public Pizza
+{
+protected:
+    PizzaStyle(std::shared_ptr<Pizza> pizza,
+               const std::string& name);
+
+    std::weak_ptr<Pizza> m_pizza;
+};
+
+class NewYorkPizzaStyle : public PizzaStyle
+{
+public:
+    NewYorkPizzaStyle(std::shared_ptr<Pizza> pizza);
+};
+
+class ChicagoPizzaStyle : public PizzaStyle
+{
+public:
+    ChicagoPizzaStyle(std::shared_ptr<Pizza> pizza);
+};
+
+class CaliforniaPizzaStyle : public PizzaStyle
+{
+public:
+    CaliforniaPizzaStyle(std::shared_ptr<Pizza> pizza);
 };
 
 }
