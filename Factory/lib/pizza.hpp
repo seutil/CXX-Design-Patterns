@@ -2,15 +2,11 @@
 #include <memory>
 #include <string>
 
-namespace Pizzeria
-{
-
-class Pizza
-{
+namespace Pizzeria {
+class Pizza {
 friend class PizzaStyle;
 public:
-    enum class Size
-    {
+    enum class Size {
         SMALL,
         MEDIUM,
         LARGE
@@ -31,32 +27,27 @@ protected:
     Size m_size;
 };
 
-class CheesePizza : public Pizza
-{
+class CheesePizza : public Pizza {
 public:
     CheesePizza(const Size& size = Size::MEDIUM);
 };
 
-class PepperoniPizza : public Pizza
-{
+class PepperoniPizza : public Pizza {
 public:
     PepperoniPizza(const Size& size = Size::MEDIUM);
 };
 
-class ClamPizza : public Pizza
-{
+class ClamPizza : public Pizza {
 public:
     ClamPizza(const Size& size = Size::MEDIUM);
 };
 
-class VeggiePizza : public Pizza
-{
+class VeggiePizza : public Pizza {
 public:
     VeggiePizza(const Size& size = Size::MEDIUM);
 };
 
-class PizzaStyle : public Pizza
-{
+class PizzaStyle : public Pizza {
 protected:
     PizzaStyle(std::shared_ptr<Pizza> pizza,
                const std::string& name);
@@ -64,22 +55,18 @@ protected:
     std::weak_ptr<Pizza> m_pizza;
 };
 
-class NewYorkPizzaStyle : public PizzaStyle
-{
+class NewYorkPizzaStyle : public PizzaStyle {
 public:
     NewYorkPizzaStyle(std::shared_ptr<Pizza> pizza);
 };
 
-class ChicagoPizzaStyle : public PizzaStyle
-{
+class ChicagoPizzaStyle : public PizzaStyle {
 public:
     ChicagoPizzaStyle(std::shared_ptr<Pizza> pizza);
 };
 
-class CaliforniaPizzaStyle : public PizzaStyle
-{
+class CaliforniaPizzaStyle : public PizzaStyle {
 public:
     CaliforniaPizzaStyle(std::shared_ptr<Pizza> pizza);
 };
-
 }

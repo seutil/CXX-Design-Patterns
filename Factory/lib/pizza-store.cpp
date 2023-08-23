@@ -2,9 +2,7 @@
 #include "pizza-store.hpp"
 using namespace Pizzeria;
 
-std::shared_ptr<Pizza>
-PizzaStore::order_pizza(const std::string& type) const
-{
+std::shared_ptr<Pizza> PizzaStore::order_pizza(const std::string& type) const {
     std::shared_ptr<Pizza> pizza;
     if (type == "cheese")
         pizza = std::make_shared<CheesePizza>();
@@ -21,20 +19,14 @@ PizzaStore::order_pizza(const std::string& type) const
     return pizza;
 }
 
-void
-NewYorkPizzaStore::decorate_pizza(std::shared_ptr<Pizza>& pizza) const
-{
+void NewYorkPizzaStore::decorate_pizza(std::shared_ptr<Pizza>& pizza) const {
     pizza = std::make_shared<NewYorkPizzaStyle>(pizza);
 }
 
-void
-ChicagoPizzaStore::decorate_pizza(std::shared_ptr<Pizza>& pizza) const
-{
+void ChicagoPizzaStore::decorate_pizza(std::shared_ptr<Pizza>& pizza) const {
     pizza = std::make_shared<ChicagoPizzaStyle>(pizza);
 }
 
-void
-CaliforniaPizzaStore::decorate_pizza(std::shared_ptr<Pizza>& pizza) const
-{
+void CaliforniaPizzaStore::decorate_pizza(std::shared_ptr<Pizza>& pizza) const {
     pizza = std::make_shared<CaliforniaPizzaStyle>(pizza);
 }

@@ -14,12 +14,10 @@ int main()
     std::transform(pizza_type.begin(), pizza_type.end(), pizza_type.begin(), [](char c) { return std::tolower(c); });
 
     std::shared_ptr<Pizza> pizza;
-    try
-    {
+    try {
         pizza = pizza_store->order_pizza(pizza_type);
     }
-    catch (std::logic_error ex)
-    {
+    catch (std::logic_error ex) {
         std::cout << "Unknown pizza type\n";
         return 1;
     }
