@@ -3,9 +3,7 @@
 #include "beverages.hpp"
 using namespace Starbuzz;
 
-void
-CoffeineBeverage::make() const
-{
+void CoffeineBeverage::make() const {
     boil_water();
     brew();
     pour_in_cup();
@@ -13,41 +11,28 @@ CoffeineBeverage::make() const
         add_condiments();
 }
 
-void
-CoffeineBeverage::boil_water() const
-{
+void CoffeineBeverage::boil_water() const {
     std::cout << "Boiling water...\n";
 }
 
-void
-CoffeineBeverage::pour_in_cup() const
-{
+void CoffeineBeverage::pour_in_cup() const {
     std::cout << "Pouring into cup\n";
 }
 
-bool
-CoffeineBeverage::use_condiments() const
-{
+bool CoffeineBeverage::use_condiments() const {
     return true;
 }
 
-
-void
-Coffee::brew() const
-{
+void Coffee::brew() const {
     std::cout << "Dripping Coffee through filter\n";
 }
 
-void
-Coffee::add_condiments() const
-{
+void Coffee::add_condiments() const {
     std::cout << "Prepearing sugar and milk...\n";
     std::cout << "Adding sugar and milk for coffee\n";
 }
 
-bool
-Coffee::use_condiments() const
-{
+bool Coffee::use_condiments() const {
     std::cout << "Would you like milk and sugar with your coffee?[Y/n]: ";
     char answer;
     std::cin >> answer;
@@ -55,15 +40,11 @@ Coffee::use_condiments() const
     return answer == ' ' || answer == 'y';
 }
 
-void
-Tea::brew() const
-{
+void Tea::brew() const {
     std::cout << "Wait for tea to brew...\n";
 }
 
-void
-Tea::add_condiments() const
-{
+void Tea::add_condiments() const {
     std::cout << "Prepearing a lemon for tea...\n";
     std::cout << "Adding lemon\n";
 }

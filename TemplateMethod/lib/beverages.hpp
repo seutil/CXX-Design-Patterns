@@ -1,10 +1,7 @@
 #pragma once
 
-namespace Starbuzz
-{
-
-class CoffeineBeverage
-{
+namespace Starbuzz {
+class CoffeineBeverage {
 public:
     void make() const;
     virtual ~CoffeineBeverage() = default;
@@ -16,19 +13,16 @@ protected:
     virtual void add_condiments() const = 0;
 };
 
-class Coffee : public CoffeineBeverage
-{
+class Coffee : public CoffeineBeverage {
 protected:
     bool use_condiments() const override;
     void brew() const override;
     void add_condiments() const override;
 };
 
-class Tea : public CoffeineBeverage
-{
+class Tea : public CoffeineBeverage {
 protected:
     void brew() const override;
     void add_condiments() const override;
 };
-
 }

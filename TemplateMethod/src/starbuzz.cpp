@@ -1,8 +1,7 @@
 #include <iostream>
 #include "beverages.hpp"
 
-int main()
-{
+int main() {
     using namespace Starbuzz;
 
     Coffee coffee;
