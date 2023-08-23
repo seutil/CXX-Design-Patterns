@@ -1,8 +1,7 @@
 #include <iostream>
 #include "waitress.hpp"
 
-int main()
-{
+int main() {
     using namespace Bistro;
 
     std::unique_ptr breakfast_menu = std::make_unique<PancakeHouseMenu>();

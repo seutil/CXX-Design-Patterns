@@ -4,11 +4,8 @@
 #include <vector>
 #include "menu.hpp"
 
-namespace Bistro
-{
-
-class Waitress
-{
+namespace Bistro {
+class Waitress {
 public:
     Waitress(std::unique_ptr<PancakeHouseMenu>&& breakfast_menu,
              std::unique_ptr<DinerMenu>&& lunch_menu);
@@ -21,5 +18,4 @@ protected:
     std::unique_ptr<IMenu> m_breakfast_menu;
     std::unique_ptr<IMenu> m_lunch_menu;
 };
-
 }

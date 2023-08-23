@@ -4,13 +4,9 @@
 #include <list>
 #include <vector>
 
-namespace Bistro
-{
-
-
+namespace Bistro {
 #pragma region Menu
-class MenuItem
-{
+class MenuItem {
 public:
     MenuItem(const std::string& name,
              const std::string& description,
@@ -29,16 +25,14 @@ protected:
 #pragma endregion
 
 #pragma region Iterators
-class IIterator
-{
+class IIterator {
 public:
     virtual bool has_next() const = 0;
     virtual MenuItem& next() = 0;
     virtual ~IIterator() = default;
 };
 
-class PancakeHouseMenuIterator : public IIterator
-{
+class PancakeHouseMenuIterator : public IIterator {
 public:
     PancakeHouseMenuIterator(std::list<MenuItem>& list);
     bool has_next() const override;
@@ -48,8 +42,7 @@ protected:
     std::list<MenuItem>& m_list;
 };
 
-class DinerMenuIterator : public IIterator
-{
+class DinerMenuIterator : public IIterator {
 public:
     DinerMenuIterator(std::vector<MenuItem>& vector);
     bool has_next() const override;
@@ -61,15 +54,13 @@ protected:
 #pragma endregion
 
 #pragma region Menus
-class IMenu
-{
+class IMenu {
 public:
     virtual std::unique_ptr<IIterator> iterator() = 0;
     virtual ~IMenu() = default;
 };
 
-class PancakeHouseMenu : public IMenu
-{
+class PancakeHouseMenu : public IMenu {
 public: 
     PancakeHouseMenu();
     void add_menu_item(const MenuItem& menu_item);
@@ -79,8 +70,7 @@ protected:
     std::list<MenuItem> m_menu_items;
 };
 
-class DinerMenu : public IMenu
-{
+class DinerMenu : public IMenu {
 public:
     DinerMenu();
     void add_menu_item(const MenuItem& menu_item);
