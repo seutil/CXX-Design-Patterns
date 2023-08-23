@@ -29,15 +29,11 @@ RemoteController::RemoteController()
     }
 {}
 
-std::shared_ptr<ICommand>
-RemoteController::get_command(const std::string& command)
-{
+std::shared_ptr<ICommand> RemoteController::get_command(const std::string& command) {
     return m_commands.at(command);
 }
 
-std::vector<std::string>
-RemoteController::commands() const
-{
+std::vector<std::string> RemoteController::commands() const {
     std::vector<std::string> out;
     for (auto& p : m_commands)
         out.push_back(p.first);

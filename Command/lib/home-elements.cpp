@@ -5,11 +5,8 @@ using namespace HomeStation;
 const int MAX_CHANNEL_ID = 100;
 const int MAX_VOLUME = 100;
 
-void
-OutdoorLight::on()
-{
-    if (m_light_on)
-    {
+void OutdoorLight::on() {
+    if (m_light_on) {
         std::cout << "The outdoor light is already on\n";
         return;
     }
@@ -18,9 +15,7 @@ OutdoorLight::on()
     m_light_on = true;
 }
 
-void
-OutdoorLight::off()
-{
+void OutdoorLight::off() {
     if (!m_light_on)
     {
         std::cout << "The outdoor light is already off\n";
@@ -31,11 +26,8 @@ OutdoorLight::off()
     m_light_on = false;
 }
 
-void
-CeillingLight::on()
-{
-    if (m_light_on)
-    {
+void CeillingLight::on() {
+    if (m_light_on) {
         std::cout << "The cailling light is already on\n";
         return;
     }
@@ -44,11 +36,8 @@ CeillingLight::on()
     m_light_on = true;
 }
 
-void
-CeillingLight::off()
-{
-    if (!m_light_on)
-    {
+void CeillingLight::off() {
+    if (!m_light_on) {
         std::cout << "The ceilling light is already off\n";
         return;
     }
@@ -57,11 +46,8 @@ CeillingLight::off()
     m_light_on = false;
 }
 
-void
-TV::on()
-{
-    if (m_on)
-    {
+void TV::on() {
+    if (m_on) {
         std::cout << "The TV is already working\n";
         return;
     }
@@ -70,11 +56,8 @@ TV::on()
     m_on = true;
 }
 
-void
-TV::off()
-{
-    if (!m_on)
-    {
+void TV::off() {
+    if (!m_on) {
         std::cout << "The TV is already turned off\n";
         return;
     }
@@ -83,27 +66,20 @@ TV::off()
     m_on = false;
 }
 
-int
-TV::channel() const
-{
+int TV::channel() const {
     return m_channel;
 }
 
 void
 TV::set_channel(int new_channel)
 {
-    if (!m_on)
-    {
+    if (!m_on) {
         std::cout << "TV is turned off\n";
         return;
-    }
-    else if (new_channel < 0 || new_channel > MAX_CHANNEL_ID)
-    {
+    } else if (new_channel < 0 || new_channel > MAX_CHANNEL_ID) {
         std::cout << "The specified channel is not exists\n";
         return;
-    }
-    else if (new_channel == m_channel)
-    {
+    } else if (new_channel == m_channel) {
         std::cout << "Channel is already used\n";
         return;
     }
@@ -112,27 +88,18 @@ TV::set_channel(int new_channel)
     m_channel = new_channel;
 }
 
-int
-TV::volume() const
-{
+int TV::volume() const {
     return m_volume;
 }
 
-void
-TV::set_volume(int new_volume)
-{
-    if (!m_on)
-    {
+void TV::set_volume(int new_volume) {
+    if (!m_on) {
         std::cout << "TV is turned off\n";
         return;
-    }
-    else if (new_volume < 0 || new_volume > MAX_VOLUME)
-    {
+    } else if (new_volume < 0 || new_volume > MAX_VOLUME) {
         std::cout << "The specified volume is invalid\n";
         return;
-    }
-    else if (new_volume == m_volume)
-    {
+    } else if (new_volume == m_volume) {
         std::cout << "New volume is equal to the current one\n";
         return;
     }
@@ -141,11 +108,8 @@ TV::set_volume(int new_volume)
     m_volume = new_volume;
 }
 
-void
-Stereo::on()
-{
-    if (m_on)
-    {
+void Stereo::on() {
+    if (m_on) {
         std::cout << "The stereo is already working\n";
         return;
     }
@@ -154,11 +118,8 @@ Stereo::on()
     m_on = true;
 }
 
-void
-Stereo::off()
-{
-    if (!m_on)
-    {
+void Stereo::off() {
+    if (!m_on) {
         std::cout << "The stereo is already turned off\n";
         return;
     }
@@ -167,11 +128,8 @@ Stereo::off()
     m_on = false;
 }
 
-void
-GarageDoor::up()
-{
-    if (m_up)
-    {
+void GarageDoor::up() {
+    if (m_up) {
         std::cout << "The door is already opened\n";
         return;
     }
@@ -180,11 +138,8 @@ GarageDoor::up()
     m_up = true;
 }
 
-void
-GarageDoor::down()
-{
-    if (!m_up)
-    {
+void GarageDoor::down() {
+    if (!m_up) {
         std::cout << "The door is already closed\n";
         return;
     }
@@ -193,11 +148,8 @@ GarageDoor::down()
     m_up = false;
 }
 
-void
-GarageDoor::light_on()
-{
-    if (m_light_on)
-    {
+void GarageDoor::light_on() {
+    if (m_light_on) {
         std::cout << "Garage light is already turned on";
         return;
     }
@@ -206,11 +158,8 @@ GarageDoor::light_on()
     m_light_on = true;
 }
 
-void
-GarageDoor::light_off()
-{
-    if (!m_light_on)
-    {
+void GarageDoor::light_off() {
+    if (!m_light_on) {
         std::cout << "Garage light is already turned off\n";
         return;
     }

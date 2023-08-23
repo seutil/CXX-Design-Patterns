@@ -1,10 +1,7 @@
 #pragma once
 
-namespace HomeStation
-{
-
-class OutdoorLight
-{
+namespace HomeStation {
+class OutdoorLight {
 public:
     void on();
     void off();
@@ -12,8 +9,7 @@ protected:
     bool m_light_on;
 };
 
-class CeillingLight
-{
+class CeillingLight {
 public:
     void on();
     void off();
@@ -21,8 +17,7 @@ protected:
     bool m_light_on;
 };
 
-class TV
-{
+class TV {
 public:
     void on();
     void off();
@@ -36,8 +31,7 @@ protected:
     int m_volume;
 };
 
-class Stereo
-{
+class Stereo {
 public:
     void on();
     void off();
@@ -45,8 +39,7 @@ protected:
     bool m_on;
 };
 
-class GarageDoor
-{
+class GarageDoor {
 public:
     void up();
     void down();
@@ -56,5 +49,4 @@ protected:
     bool m_up;
     bool m_light_on;
 };
-
 }
