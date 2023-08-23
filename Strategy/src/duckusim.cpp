@@ -1,7 +1,6 @@
 #include <ducks.hpp>
 
-int main()
-{
+int main() {
     using namespace DuckUSim;
 
     std::unique_ptr<Duck> duck = std::make_unique<MallardDuck>();

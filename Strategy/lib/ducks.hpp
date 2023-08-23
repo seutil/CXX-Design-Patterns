@@ -2,11 +2,8 @@
 #include <memory>
 #include "behaviors.hpp"
 
-namespace DuckUSim
-{
-
-class Duck
-{
+namespace DuckUSim {
+class Duck {
 public:
     inline void fly()   const { m_fly_behavior->fly(); };
     inline void swim()  const { m_swim_behavior->swim(); };
@@ -26,33 +23,27 @@ protected:
     std::unique_ptr<IQuackBehavior> m_quack_behavior;
 };
 
-class MallardDuck : public Duck
-{
+class MallardDuck : public Duck {
 public:
     MallardDuck() : Duck(std::make_unique<Fly>(), std::make_unique<Swim>(), std::make_unique<Quack>())
     {} 
 };
 
-class RedheadDuck : public Duck
-{
+class RedheadDuck : public Duck {
 public:
     RedheadDuck() : Duck(std::make_unique<Fly>(), std::make_unique<Swim>(), std::make_unique<Quack>())
     {}
 };
 
-class RubberDuck : public Duck
-{
+class RubberDuck : public Duck {
 public:
     RubberDuck() : Duck(std::make_unique<Fall>(), std::make_unique<Swim>(), std::make_unique<Quack>())
     {}
 };
 
-class ModelDuck : public Duck
-{
+class ModelDuck : public Duck {
 public:
     ModelDuck() : Duck(std::make_unique<Fall>(), std::make_unique<Drown>(), std::make_unique<Muted>())
     {}
 };
-
 }
-
