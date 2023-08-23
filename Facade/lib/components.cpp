@@ -2,51 +2,35 @@
 #include "components.hpp"
 using namespace HomeCinema;
 
-void
-Speaker::on()
-{
+void Speaker::on() {
     std::cout << "Speaker is turned on\n";
 }
 
-void
-Speaker::off()
-{
+void Speaker::off() {
     std::cout << "Speaker is turned off\n";
 }
 
-void
-Amplifier::on()
-{
+void Amplifier::on() {
     std::cout << "Amplifier is turned on\n";
 }
 
-void
-Amplifier::off()
-{
+void Amplifier::off() {
     std::cout << "Amplifier is turned off\n";
 }
 
-void
-DvdPlayer::on()
-{
+void DvdPlayer::on() {
     std::cout << "Insert DVD disk\n";
 }
 
-void
-DvdPlayer::off()
-{
+void DvdPlayer::off() {
     std::cout << "Eject DVD disk\n";
 }
 
-void
-Screen::on()
-{
+void Screen::on() {
     std::cout << "Screen is turned on\n";
 }
 
-void
-Screen::off()
-{
+void Screen::off() {
     std::cout << "Screen is turned off\n";
 }
 
@@ -54,7 +38,7 @@ CinemaFacade::CinemaFacade()
     : m_screen(std::make_unique<Screen>()),
       m_amplifier(std::make_unique<Amplifier>()),
       m_dvd_player{std::make_unique<DvdPlayer>()},
-      m_speakers{
+      m_speakers {
         std::make_shared<Speaker>(),
         std::make_shared<Speaker>(),
         std::make_shared<Speaker>(),
@@ -64,9 +48,7 @@ CinemaFacade::CinemaFacade()
       }
 {}
 
-void
-CinemaFacade::on()
-{
+void CinemaFacade::on() {
     std::cout << "Start...\n";
     m_dvd_player->on();
     for (const auto& s : m_speakers)
@@ -76,9 +58,7 @@ CinemaFacade::on()
     std::cout << "Done\n";
 }
 
-void
-CinemaFacade::off()
-{
+void CinemaFacade::off() {
     std::cout << "Stop...\n";
     m_dvd_player->off();
     for (const auto& s : m_speakers)

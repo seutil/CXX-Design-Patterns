@@ -1,7 +1,6 @@
 #include <components.hpp>
 
-int main()
-{
+int main() {
     using namespace HomeCinema;
     std::unique_ptr home_cinema = std::make_unique<CinemaFacade>();
     home_cinema->on();
