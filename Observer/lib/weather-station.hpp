@@ -3,11 +3,8 @@
 #include <vector>
 #include "weather-displays.hpp"
 
-namespace WeatherStation
-{
-
-class WeatherData
-{
+namespace WeatherStation {
+class WeatherData {
 public:
     void set_measurements(const double& temperature,
                           const double& humidity,
@@ -22,5 +19,4 @@ protected:
     double m_pressure;
     std::vector<std::weak_ptr<IWeatherDisplay>> m_displays;
 };
-
 }

@@ -1,7 +1,6 @@
 #include <weather-station.hpp>
 
-int main()
-{
+int main() {
     using namespace WeatherStation;
 
     std::unique_ptr weather_data = std::make_unique<WeatherData>();

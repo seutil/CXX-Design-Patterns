@@ -3,10 +3,9 @@
 #include "weather-displays.hpp"
 using namespace WeatherStation;
 
-void
-CurrentWeatherDisplay::update(const double& temperature,
-                              const double& humidity,
-                              const double& pressure)
+void CurrentWeatherDisplay::update(const double& temperature,
+                                   const double& humidity,
+                                   const double& pressure)
 {
     std::cout << "====== CURRENT DISPLAY =====\n"
               << "Temperature: " << temperature << "\n"
@@ -15,10 +14,9 @@ CurrentWeatherDisplay::update(const double& temperature,
               << "============================\n\n";
 }
 
-void
-StaticticsWeatherDisplay::update(const double& temperature,
-                                 const double& humidity,
-                                 const double& pressure)
+void StaticticsWeatherDisplay::update(const double& temperature,
+                                      const double& humidity,
+                                      const double& pressure)
 {
     m_temperatures.push_back(temperature);
     m_humidities.push_back(humidity);
