@@ -1,11 +1,8 @@
 #pragma once
 #include <string>
 
-namespace Adapter
-{
-
-class PowerSocket
-{
+namespace Adapter {
+class PowerSocket {
 public:
     const std::string& name() const;
     const int& voltage() const;
@@ -17,16 +14,13 @@ protected:
     int m_voltage;
 };
 
-class UsaPowerSocket : public PowerSocket
-{
+class UsaPowerSocket : public PowerSocket {
 public:
     UsaPowerSocket();
 };
 
-class EuropePowerSocket : public PowerSocket
-{
+class EuropePowerSocket : public PowerSocket {
 public:
     EuropePowerSocket();
 };
-
 }

@@ -2,8 +2,7 @@
 #include <plugs.hpp>
 #include <power-socket-adapters.hpp>
 
-int main()
-{
+int main() {
     using namespace Adapter;
 
     std::unique_ptr usa_plug = std::make_unique<UsaPlug>();

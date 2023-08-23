@@ -7,15 +7,11 @@ PowerSocket::PowerSocket(const std::string& name,
       m_voltage{voltage}
 {}
 
-const std::string&
-PowerSocket::name() const
-{
+const std::string& PowerSocket::name() const {
     return m_name;
 }
 
-const int&
-PowerSocket::voltage() const
-{
+const int& PowerSocket::voltage() const {
     return m_voltage;
 }
 
