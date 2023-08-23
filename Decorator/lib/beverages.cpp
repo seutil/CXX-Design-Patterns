@@ -9,27 +9,19 @@ Beverage::Beverage(const std::string& name,
       m_size{size}
 {}
 
-const std::string&
-Beverage::name() const
-{
+const std::string& Beverage::name() const {
     return m_name;
 }
 
-const double&
-Beverage::cost() const
-{
+const double& Beverage::cost() const {
     return m_cost;
 }
 
-const Beverage::Size&
-Beverage::size() const
-{
+const Beverage::Size& Beverage::size() const {
     return m_size;
 }
 
-void
-Beverage::set_size(const Size& size)
-{
+void Beverage::set_size(const Size& size) {
     m_size = size;
 }
 

@@ -1,14 +1,10 @@
 #pragma once
 #include <string>
 
-namespace Starbuzz
-{
-
-class Beverage
-{
+namespace Starbuzz {
+class Beverage {
 public:
-    enum class Size
-    {
+    enum class Size {
         SHORT,
         TALL,
         GRANDE
@@ -23,34 +19,28 @@ protected:
     Beverage(const std::string& name,
              const double& cost,
              const Size& size);
-
     std::string m_name;
     double m_cost;
     Size m_size;
 };
 
-class HouseBlend : public Beverage
-{
+class HouseBlend : public Beverage {
 public:
     HouseBlend(const Size& size = Size::TALL);
 };
 
-class DarkRoast : public Beverage
-{
+class DarkRoast : public Beverage {
 public:
     DarkRoast(const Size& size = Size::TALL);
 };
 
-class Decaf : public Beverage
-{
+class Decaf : public Beverage {
 public:
     Decaf(const Size& size = Size::TALL);
 };
 
-class Espresso : public Beverage
-{
+class Espresso : public Beverage {
 public:
     Espresso(const Size& size = Size::TALL);
 };
-
 }

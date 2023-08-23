@@ -2,8 +2,7 @@
 #include <beverages.hpp>
 #include <beverage-condiments.hpp>
 
-int main()
-{
+int main() {
     using namespace Starbuzz;
 
     std::shared_ptr<Beverage> beverage = std::make_shared<Espresso>(Espresso::Size::GRANDE);
@@ -12,5 +11,6 @@ int main()
     beverage = std::make_shared<Whip>(beverage);
     std::cout << "You'r order: " << beverage->name() << "\n"
               << "Order cost:  " << beverage->cost() << "\n";
+
     return 0;
 }
